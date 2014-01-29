@@ -1,0 +1,29 @@
+{
+	"name": "angular-pusher",
+	"version": "1.0.0",
+	"authors": [
+		"brian.woodward@gmail.com"
+	],
+	"description": "AngularJS provider and service for Pusher",
+	"keywords": [
+		"angular",
+		"AngularJS",
+		"provider",
+		"service",
+		"angular-pusher",
+		"pusher"
+	],
+	"license": "MIT",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"angular":"~1.2.0"
+	},
+	"devDependencies": {
+	}
+}
