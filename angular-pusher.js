@@ -8,7 +8,7 @@
 'use strict';
 
 angular.module('doowb.angular-pusher', [])
-.factory('doowbPusher', [ function () {
+.factory('Pusher', [ function () {
 
 	//public methods & properties
 	var self ={
