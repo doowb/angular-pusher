@@ -15,8 +15,8 @@ config(['$routeProvider', '$locationProvider', '$compileProvider', 'PusherServic
 		$locationProvider.html5Mode(false);
 		
 		var staticPath;
-		staticPath ='/';		//nodejs (local)
-		// staticPath ='/angular-pusher/';		//gh-pages
+		// staticPath ='/';		//nodejs (local)
+		staticPath ='/angular-pusher/';		//gh-pages
 		var appPathRoute ='/';
 		var pagesPath =staticPath+'pages/';
 		
