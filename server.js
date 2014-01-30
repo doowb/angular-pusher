@@ -4,6 +4,10 @@ var fs =require('fs');		//for image upload file handling
 
 var express = require('express');
 var app = express();
+var Pusher = require('pusher');
+var pusherConfig = require('./pusherConfig');
+
+var pusher = new Pusher(pusherConfig);
 
 var port =3000;
 var host ='localhost';
@@ -24,10 +28,34 @@ app.configure(function(){
 	app.use(express.bodyParser());		//for post content / files - not sure if this is actually necessary?
 });
 
+var items = [
+			{ id: 0, name: 'Item 1', qty: 1 },
+			{ id: 1, name: 'Item 2', qty: 1 },
+			{ id: 2, name: 'Item 3', qty: 1 },
+			{ id: 3, name: 'Item 4', qty: 1 },
+			{ id: 4, name: 'Item 5', qty: 1 },
+			{ id: 5, name: 'Item 6', qty: 1 }
+		];
+
+app.get('/api/items', function (req, res) {
+	console.log('getting items');
+	res.json(items);
+});
+
+app.post('/api/items', function (req, res) {
+	console.log('updating item');
+	var item = req.body;
+	items[item.id] = item;
+
+	pusher.trigger('items', 'updated', item);
+	res.json(item);
+});
+
 //catch all route to serve index.html (main frontend app)
 app.get('*', function(req, res){
 	res.sendfile(staticFilePath + staticPath+ 'index.html');
 });
+
 
 app.listen(port);
 

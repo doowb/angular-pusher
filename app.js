@@ -21,6 +21,7 @@ config(['$routeProvider', '$locationProvider', '$compileProvider', 'PusherServic
 		var pagesPath =staticPath+'pages/';
 		
 		$routeProvider.when(appPathRoute+'home', {templateUrl: pagesPath+'home/home.html'});
+		$routeProvider.when(appPathRoute+'items', {templateUrl: pagesPath+'items/items.html'});
 		$routeProvider.otherwise({redirectTo: appPathRoute+'home'});
 
 		PusherServiceProvider

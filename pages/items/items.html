@@ -1,0 +1,11 @@
+<div ng-controller='ItemListController'>
+	<h1>Items</h1>
+	<table>
+	  <tr><th>Name</th><th>Qty</th><th></th></tr>
+	  <tr ng-repeat="item in items">
+	    <td><input type="text" ng-model="item.name"></td>
+	    <td><input type="text" ng-model="item.qty"></td>
+	    <td><button type="button" ng-click="updateItem(item)">Update</button></td>
+	  </tr>
+	</table>
+</div>
