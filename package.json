@@ -1,10 +1,13 @@
 {
   "author": "Brian Woodward",
   "contributors": [
-    { "name": "Brian Woodward", "url": "https://github.com/doowb" }
+    {
+      "name": "Brian Woodward",
+      "url": "https://github.com/doowb"
+    }
   ],
   "name": "angular-pusher",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "homepage": "",
   "dependencies": {},
