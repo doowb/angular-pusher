@@ -48,6 +48,7 @@ app.post('/api/items', function (req, res) {
 	items[item.id] = item;
 
 	pusher.trigger('items', 'updated', item);
+	pusher.trigger('activities', 'new', {timestamp: new Date(), message: item.name + ' updated.'});
 	res.json(item);
 });
 

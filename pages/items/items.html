@@ -8,4 +8,8 @@
 	    <td><button type="button" ng-click="updateItem(item)">Update</button></td>
 	  </tr>
 	</table>
+
+	<br><br><br>
+	<h1>Activities ({{activities.length}})</h1>
+	<div ng-repeat="activity in activities" ng-animate=" 'animate' ">[{{activity.timestamp | date:'mediumTime'}}]{{activity.message}}</div>
 </div>

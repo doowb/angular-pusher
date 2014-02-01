@@ -4,6 +4,7 @@
 angular.module('myApp').controller('ItemListController', ['$scope', '$http', 'Pusher', function($scope, $http, Pusher) {
 
 	$scope.items = [];
+  $scope.activities = [];
 
 	Pusher.subscribe('items', 'updated', function (item) {
 		console.log('item changed', item);
@@ -14,6 +15,11 @@ angular.module('myApp').controller('ItemListController', ['$scope', '$http', 'Pu
 			}
 		}
 	});
+
+  Pusher.subscribe('activities', 'new', function (activity) {
+    console.log('new activity', activity);
+    $scope.activities.unshift(activity);
+  });
 
   var retrieveItems = function () {
     // get a list of items from the api located at '/api/items'

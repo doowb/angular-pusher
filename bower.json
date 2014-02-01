@@ -1,26 +1,27 @@
 {
-	"name": "angular-pusher",
-	"version": "0.0.0",
-	"authors": [
-		"brian.woodward@gmail.com"
-	],
-	"description": "Demo",
-	"keywords": [
-	],
-	"license": "MIT",
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"
-	],
-	"dependencies": {
-		"angular":"~1.2.0",
-		"angular-sanitize":"~1.2.0",
-		"angular-route":"~1.2.0",
-		"angular-touch":"~1.2.0"
-	},
-	"devDependencies": {
-	}
+  "name": "angular-pusher",
+  "version": "0.0.0",
+  "authors": [
+    "brian.woodward@gmail.com"
+  ],
+  "description": "Demo",
+  "keywords": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.0",
+    "angular-sanitize": "~1.2.0",
+    "angular-route": "~1.2.0",
+    "angular-touch": "~1.2.0"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "angular": "1.2.11-build.2192+sha.e2173f9"
+  }
 }
