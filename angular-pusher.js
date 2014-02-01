@@ -85,10 +85,9 @@ angular.module('doowb.angular-pusher', [])
 .factory('Pusher', ['$rootScope', 'PusherService',
 	function ($rootScope, PusherService) {
 		return {
-			subscribe: function (channelName, eventName, callback) {
+			subscribe: function (channel, eventName, callback) {
 				PusherService.then(function (pusher) {
-                    var channel = pusher.channel(channelName) || pusher.subscribe(channelName);
-					channel.bind(eventName, function (data) {
+					pusher.subscribe(channel).bind(eventName, function (data) {
 						if (callback) callback(data);
 						$rootScope.$broadcast(channel + ':' + eventName, data);
 						$rootScope.$digest();
