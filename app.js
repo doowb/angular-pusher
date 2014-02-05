@@ -23,7 +23,7 @@ config(['$routeProvider', '$locationProvider', '$compileProvider', 'PusherServic
     
     $routeProvider.when(appPathRoute+'home', {templateUrl: pagesPath+'home/home.html'});
     $routeProvider.when(appPathRoute+'items', {templateUrl: pagesPath+'items/items.html'});
-    $routeProvider.otherwise({redirectTo: appPathRoute+'home'});
+    $routeProvider.otherwise({redirectTo: appPathRoute+'items'});
 
     PusherServiceProvider
       .setToken('d420162e600c57b0e60f')
