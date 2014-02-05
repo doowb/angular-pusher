@@ -9,10 +9,10 @@ var pusherConfig = require('./pusherConfig');
 
 var pusher = new Pusher(pusherConfig);
 
-var port =3000;
-var host ='localhost';
-var serverPath ='/';
-var staticPath ='/';
+var port = Number(process.env.PORT || 3000);
+var host = 'localhost';
+var serverPath = '/';
+var staticPath = '/';
 
 var staticFilePath = __dirname + serverPath;
 // remove trailing slash if present
