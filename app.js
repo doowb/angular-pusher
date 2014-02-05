@@ -5,6 +5,8 @@
 
 'use strict';
 
+var staticPath = (window.location.indexOf('doowb.github') > -1) ? '/angular-pusher/' : '/';
+
 angular.module('myApp', [
 'ngRoute', 'ngSanitize', 'ngTouch',   //additional angular modules
 'ngAnimate',
@@ -15,9 +17,6 @@ config(['$routeProvider', '$locationProvider', '$compileProvider', 'PusherServic
 
     $locationProvider.html5Mode(false);
     
-    var staticPath;
-     staticPath ='/';   //nodejs (local)
-    //staticPath ='/angular-pusher/';   //gh-pages
     var appPathRoute ='/';
     var pagesPath =staticPath+'pages/';
     
