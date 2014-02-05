@@ -5,7 +5,15 @@ var fs =require('fs');		//for image upload file handling
 var express = require('express');
 var app = express();
 var Pusher = require('pusher');
-var pusherConfig = require('./pusherConfig');
+
+var pusherConfig = {};
+try {
+	pusherConfig = require('./pusherConfig');
+} catch (err) {
+	pusherConfig.appId = process.env.PUSHER_APP_ID;
+	pusherConfig.key = process.env.PUSHER_KEY;
+	pusherConfig.secret = process.env.PUSHER_SECRET;
+}
 
 var pusher = new Pusher(pusherConfig);
 
