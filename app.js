@@ -5,7 +5,7 @@
 
 'use strict';
 
-var staticPath = (window.location.indexOf('doowb.github') > -1) ? '/angular-pusher/' : '/';
+var staticPath = (window.location.host.indexOf('doowb.github') > -1) ? '/angular-pusher/' : '/';
 
 angular.module('myApp', [
 'ngRoute', 'ngSanitize', 'ngTouch',   //additional angular modules
