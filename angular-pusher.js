@@ -85,14 +85,21 @@ angular.module('doowb.angular-pusher', [])
 .factory('Pusher', ['$rootScope', 'PusherService',
   function ($rootScope, PusherService) {
     return {
+
       subscribe: function (channelName, eventName, callback) {
         PusherService.then(function (pusher) {
-                    var channel = pusher.channel(channelName) || pusher.subscribe(channelName);
+          var channel = pusher.channel(channelName) || pusher.subscribe(channelName);
           channel.bind(eventName, function (data) {
             if (callback) callback(data);
             $rootScope.$broadcast(channelName + ':' + eventName, data);
             $rootScope.$digest();
           });
+        });
+      },
+
+      unsubscribe: function (channelName) {
+        PusherService.then(function (pusher) {
+          pusher.unsubscribe(channelName);
         });
       }
     };

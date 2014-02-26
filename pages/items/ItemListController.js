@@ -35,6 +35,13 @@ angular.module('myApp').controller('ItemListController', ['$scope', '$http', 'Pu
     $http.post('/api/items', item);
   };
 
+  $scope.$on('$destroy', function () {
+    Pusher.unsubscribe('items');
+    console.log('Unsubscribed from items');
+    Pusher.unsubscribe('activities');
+    console.log('Unsubscribed from activities');
+  })
+
   // load the items
   retrieveItems();
 
