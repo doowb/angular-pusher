@@ -90,7 +90,7 @@ angular.module('doowb.angular-pusher', [])
                     var channel = pusher.channel(channelName) || pusher.subscribe(channelName);
 					channel.bind(eventName, function (data) {
 						if (callback) callback(data);
-						$rootScope.$broadcast(channel + ':' + eventName, data);
+						$rootScope.$broadcast(channelName + ':' + eventName, data);
 						$rootScope.$digest();
 					});
 				});
