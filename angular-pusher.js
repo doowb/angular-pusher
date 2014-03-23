@@ -84,7 +84,7 @@ angular.module('doowb.angular-pusher', [])
 
 .factory('Pusher', ['$rootScope', 'PusherService',
   function ($rootScope, PusherService) {
-    return {
+    var factory = {
 
       subscribe: function (channelName, eventName, callback) {
         PusherService.then(function (pusher) {
@@ -103,5 +103,7 @@ angular.module('doowb.angular-pusher', [])
         });
       }
     };
+    
+    return factory;
   }
 ]);
