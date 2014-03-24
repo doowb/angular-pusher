@@ -5,6 +5,7 @@
 		"brian.woodward@gmail.com"
 	],
 	"description": "AngularJS provider and service for Pusher",
+	"main": "./angular-pusher.js",
 	"keywords": [
 		"angular",
 		"AngularJS",
