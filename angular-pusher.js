@@ -62,7 +62,6 @@ angular.module('doowb.angular-pusher', [])
   this.$get = ['$document', '$timeout', '$q', '$rootScope', '$window',
     function ($document, $timeout, $q, $rootScope, $window) {
       var deferred = $q.defer();
-      var socket;
       var pusher;
 
       function onSuccess () {
