@@ -7,7 +7,7 @@
     }
   ],
   "name": "angular-pusher",
-  "version": "0.0.0",
+  "version": "0.0.7",
   "description": "",
   "homepage": "",
   "devDependencies": {
@@ -28,9 +28,5 @@
   },
   "engines": {
     "node": "0.10.10"
-  },
-  "dependencies": {
-    "pusher": "~0.1.3",
-    "express": "~3.4.8"
   }
 }

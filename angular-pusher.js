@@ -21,12 +21,13 @@ angular.module('doowb.angular-pusher', [])
 // create a provider that loads the pusher script from a cdn
 .provider('PusherService', function () {
   var scriptUrl = '//js.pusher.com/2.1/pusher.min.js';
+  var secureScriptUrl = '//d3dy5gmtp8yhk7.cloudfront.net/2.1/pusher.min.js';
   var scriptId = 'pusher-sdk';
   var apiKey = '';
   var initOptions = {};
 
   this.setPusherUrl = function (url) {
-    scriptUrl = url || scriptUrl;
+    if(url) scriptUrl = secureScriptUrl = url;
     return this;
   };
 
@@ -41,12 +42,12 @@ angular.module('doowb.angular-pusher', [])
   };
 
   // load the pusher api script async
-  function createScript ($document, callback, success) {
+  function createScript ($document, protocol, callback, success ) {
     var tag = $document.createElement('script');
     tag.type = 'text/javascript';
     tag.async = true;
     tag.id = scriptId;
-    tag.src = scriptUrl;
+    tag.src = (protocol == 'https') ? secureScriptUrl : scriptUrl;
 
     tag.onreadystatechange = tag.onload = function () {
       var state = tag.readState;
@@ -59,10 +60,11 @@ angular.module('doowb.angular-pusher', [])
     $document.getElementsByTagName('head')[0].appendChild(tag);
   }
 
-  this.$get = ['$document', '$timeout', '$q', '$rootScope', '$window',
-    function ($document, $timeout, $q, $rootScope, $window) {
+  this.$get = ['$document', '$timeout', '$q', '$rootScope', '$window', '$location',
+    function ($document, $timeout, $q, $rootScope, $window, $location) {
       var deferred = $q.defer();
       var pusher;
+      var protocol = $location.protocol();
 
       function onSuccess () {
         pusher = new $window.Pusher(apiKey, initOptions);
@@ -75,7 +77,7 @@ angular.module('doowb.angular-pusher', [])
         });
       };
 
-      createScript($document[0], onScriptLoad);
+      createScript($document[0], protocol, onScriptLoad);
       return deferred.promise;
     }];
 
