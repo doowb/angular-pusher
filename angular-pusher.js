@@ -20,8 +20,8 @@ angular.module('doowb.angular-pusher', [])
 
 // create a provider that loads the pusher script from a cdn
 .provider('PusherService', function () {
-  var scriptUrl = '//js.pusher.com/2.1/pusher.min.js';
-  var secureScriptUrl = '//d3dy5gmtp8yhk7.cloudfront.net/2.1/pusher.min.js';
+  var scriptUrl = '//js.pusher.com/2.2/pusher.min.js';
+  var secureScriptUrl = '//d3dy5gmtp8yhk7.cloudfront.net/2.2/pusher.min.js';
   var scriptId = 'pusher-sdk';
   var apiKey = '';
   var initOptions = {};
