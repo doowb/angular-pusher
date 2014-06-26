@@ -107,8 +107,13 @@ module.exports = function (grunt) {
     });
 
   grunt.registerTask('bump', function () {
+    var semver = require('semver');
     console.log('bumping');
     var pkg = require('./package.json');
+    var version = pkg.version || '0.0.1';
+    console.log('previous version', version);
+    version = semver.inc(version, 'patch');
+    console.log('new version', version);
     console.log('./package.json', pkg);
     var bower = require('./bower.json');
     console.log('./bower.json', bower);
