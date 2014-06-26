@@ -1,0 +1,4 @@
+#!/bin/bash
+read version;
+echo version=$version;
+rm "./output.txt";

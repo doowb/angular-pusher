@@ -108,15 +108,17 @@ module.exports = function (grunt) {
 
   grunt.registerTask('bump', function () {
     var semver = require('semver');
-    console.log('bumping');
+    var file = require('fs-utils');
     var pkg = require('./package.json');
-    var version = pkg.version || '0.0.1';
-    console.log('previous version', version);
-    version = semver.inc(version, 'patch');
-    console.log('new version', version);
-    console.log('./package.json', pkg);
     var bower = require('./bower.json');
-    console.log('./bower.json', bower);
+    var version = pkg.version || '0.0.1';
+    version = semver.inc(version, 'patch');
+    process.env['NEXT_VERSION'] = version;
+    pkg.version = version;
+    bower.version = version;
+    file.writeJSONSync('./package.json', pkg);
+    file.writeJSONSync('./bower.json', bower);
+    process.stderr.write('v' + version);
   });
 
 
