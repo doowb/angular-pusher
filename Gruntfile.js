@@ -108,10 +108,10 @@ module.exports = function (grunt) {
 
   grunt.registerTask('bump', function () {
     console.log('bumping');
-    var pkg = require('package.json');
-    console.log('package.json', pkg);
-    var bower = require('bower.json');
-    console.log('bower.json', bower);
+    var pkg = require('./package.json');
+    console.log('./package.json', pkg);
+    var bower = require('./bower.json');
+    console.log('./bower.json', bower);
   });
 
 
