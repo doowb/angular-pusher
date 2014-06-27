@@ -5,20 +5,11 @@ read version;
 echo version=$version;
 rm "./output.txt";
 
-# configure my git info
-git config --global user.name "Brian Woodward"
-git config --global user.email "brian.woodward@gmail.com"
-
 # Add and update the changed files
 git status
 git add .
 git status
 git commit -m "bumping version $version"
-
-# re-add the remote and get all the branches
-git remote remove origin
-git remote add origin git@github.com:doowb/angular-pusher.git
-git fetch --all
 
 # merge in the changed files from gh-pages
 git checkout master
