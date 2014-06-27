@@ -1,4 +1,27 @@
 #!/bin/bash
+
+# Get the version from the grunt output
 read version;
 echo version=$version;
 rm "./output.txt";
+
+# Add and update the changed files
+git add angular-pusher.js angular-pusher.min.js README.md bower.json package.json
+git commit -m "bumping version $version"
+
+# re-add the remote and get all the branches
+git remote remove origin
+git remote add origin git@github.com:doowb/angular-pusher.git
+git fetch --all
+
+# merge in the changed files from gh-pages
+git checkout master
+git checkout gh-pages angular-pusher.js angular-pusher.min.js README.md bower.json package.json
+git commit -m "merging $version"
+
+# tag the version
+git tag -a "$version" -m "$version"
+
+# push changes and tags to master
+git push origin master
+git push origin master --tags
