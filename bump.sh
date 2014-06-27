@@ -22,3 +22,6 @@ git tag -a "$version" -m "$version"
 # push changes and tags to master
 git push origin master
 git push origin master --tags
+
+# ensure we're back on gh-pages
+git checkout gh-pages
