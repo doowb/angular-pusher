@@ -113,7 +113,6 @@ module.exports = function (grunt) {
     var bower = require('./bower.json');
     var version = pkg.version || '0.0.1';
     version = semver.inc(version, 'patch');
-    process.env['NEXT_VERSION'] = version;
     pkg.version = version;
     bower.version = version;
     file.writeJSONSync('./package.json', pkg);
