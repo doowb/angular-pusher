@@ -5,6 +5,10 @@ read version;
 echo version=$version;
 rm "./output.txt";
 
+# configure my git info
+git config --global user.name "Brian Woodward"
+git config --global user.email "brian.woodward@gmail.com"
+
 # Add and update the changed files
 git add angular-pusher.js angular-pusher.min.js README.md bower.json package.json
 git commit -m "bumping version $version"
