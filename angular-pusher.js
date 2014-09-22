@@ -101,7 +101,9 @@ angular.module('doowb.angular-pusher', [])
 
       unsubscribe: function (channelName) {
         PusherService.then(function (pusher) {
-          pusher.unsubscribe(channelName);
+          if (pusher.channel(channelName)) {
+            pusher.unsubscribe(channelName);
+          }
         });
       }
     };
