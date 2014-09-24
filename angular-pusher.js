@@ -150,6 +150,7 @@ angular.module('doowb.angular-pusher', [])
 	        }
 	        channelDeferred.resolve(channel);
         });
+		return channelDeferred.promise;
       },
 
       unsubscribe: function (channelName) {
