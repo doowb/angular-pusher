@@ -163,7 +163,6 @@ angular.module('doowb.angular-pusher', [])
 
 	  // Client Event Trigger
 	  trigger: function (channelName, eventName, obj) {
-		if (channelName.indexOf('presence-') == -1 || channelName.indexOf('private-') == -1) return 'Requires presence or private channel.';
 		if (eventName.indexOf('client-') == -1) return 'Event name requires \'client-\' prefix.';
 
 		PusherService.then(function (pusher) {
