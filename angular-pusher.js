@@ -49,7 +49,7 @@ angular.module('doowb.angular-pusher', [])
     tag.src = scriptUrl;
 
     tag.onreadystatechange = tag.onload = function () {
-      var state = tag.readState;
+      var state = tag.readyState;
       if (!callback.done && (!state || /loaded|complete/.test(state))) {
         callback.done = true;
         callback();
