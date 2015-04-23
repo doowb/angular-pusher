@@ -8,8 +8,8 @@
   ],
   "name": "angular-pusher",
   "version": "0.0.13",
-  "description": "",
-  "homepage": "",
+  "description": "AngularJS provider and service for Pusher",
+  "homepage": "http://angular-pusher-example.herokuapp.com/",
   "devDependencies": {
     "express": "~3.4.4",
     "grunt": "~0.4.1",
