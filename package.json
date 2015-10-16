@@ -3,7 +3,63 @@
   "contributors": [
     {
       "name": "Brian Woodward",
+      "email": "brian.woodward@gmail.com",
       "url": "https://github.com/doowb"
+    },
+    {
+      "name": "Jerez Bain",
+      "email": "jerezb31@gmail.com",
+      "url": "https://github.com/giovanniorigins"
+    },
+    {
+      "name": "Robert Shedd",
+      "email": "robert@shedd.us",
+      "url": "https://github.com/shedd"
+    },
+    {
+      "name": "John Ledbetter",
+      "email": "john@throttle.io",
+      "url": "https://github.com/ledbettj"
+    },
+    {
+      "name": "Ian McDowell",
+      "email": "",
+      "url": "https://github.com/igmcdowell"
+    },
+    {
+      "name": "cthulhu666",
+      "email": "jakub.gluszecki@gmail.com",
+      "url": "https://github.com/cthulhu666"
+    },
+    {
+      "name": "Ben Olive",
+      "email": "",
+      "url": "https://github.com/sionide21"
+    },
+    {
+      "name": "Matt Phillips",
+      "email": "mattp@cpan.org",
+      "url": "https://github.com/mattp-"
+    },
+    {
+      "name": "Ola Persson",
+      "email": "",
+      "url": "https://github.com/olapersson"
+    },
+    {
+      "name": "Peter Dave Hello",
+      "email": "",
+      "url": "https://github.com/PeterDaveHello"
+    },
+    {
+      "name": "Phuong Nguyen",
+      "email": "phuongnd08@gmail.com",
+      "url": "https://github.com/phuongnd08"
+    },
+    {
+      "name": "Simon Ernst",
+      "email": "",
+      "url": "https://github.com/netmute"
     }
   ],
   "name": "angular-pusher",
