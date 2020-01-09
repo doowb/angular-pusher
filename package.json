@@ -29,6 +29,6 @@
     "url": "https://github.com/doowb/angular-pusher.git"
   },
   "engines": {
-    "node": "0.10.10"
+    "node": ">=0.10.10"
   }
 }
